@@ -82,7 +82,8 @@ for tagName in HTML_TAG_NAMES
 class Component extends React.Component
     constructor: (props) ->
         super(props)
-        @init(props)
+        if @init?
+            @init(props)
 
 
 module.exports.createElement = createElement
