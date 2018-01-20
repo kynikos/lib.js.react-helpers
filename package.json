@@ -1,0 +1,15 @@
+{
+  "name": "@kynikos/react-helpers",
+  "version": "1.0.0",
+  "author": "Dario Giovannetti",
+  "description": "React helpers.",
+  "scripts": {
+    "compile": "coffee --compile index.coffee"
+  },
+  "dependencies": {
+    "react": "^16.2.0"
+  },
+  "devDependencies": {
+    "coffeescript": "^2.1.1"
+  }
+}
