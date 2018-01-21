@@ -3,6 +3,14 @@
   "version": "1.0.0",
   "author": "Dario Giovannetti",
   "description": "React helpers.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kynikos/lib.js.react-helpers.git"
+  },
+  "keywords": [
+    "react"
+  ],
   "scripts": {
     "compile": "coffee --compile index.coffee"
   },
