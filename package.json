@@ -12,12 +12,19 @@
     "react"
   ],
   "scripts": {
-    "compile": "coffee --compile index.coffee"
+    "compile": "coffee --compile --transpile index.coffee"
   },
   "dependencies": {
     "react": "^16.2.0"
   },
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
     "coffeescript": "^2.1.1"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
   }
 }
