@@ -20,7 +20,7 @@ createElement = (type, args...) ->
         return React.createElement(type, null, args...)
     # I guess args[0] is a plain object then, let React.createElement possibly
     # complain about it
-    return React.createElement(type, args[0], args[1..]...)
+    return React.createElement(type, args...)
 
 
 createFragment = (args...) ->
