@@ -16,11 +16,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
   React = require('react');
 
-  // TODO: Implement helpers for these:
-  //       React.cloneElement()
-  //       React.isValidElement()
-  //       React.Children
-  //       https://reactjs.org/docs/react-api.html
   createElement = function createElement(type) {
     var _React2;
 
@@ -125,4 +120,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
   module.exports.Component = Component;
 
   module.exports.C = Component;
+
+  module.exports.cloneElement = React.cloneElement;
+
+  module.exports.isValidElement = React.isValidElement;
+
+  module.exports.Children = React.Children;
 }).call(undefined);

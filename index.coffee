@@ -5,12 +5,6 @@
 
 React = require('react')
 
-# TODO: Implement helpers for these:
-#       React.cloneElement()
-#       React.isValidElement()
-#       React.Children
-#       https://reactjs.org/docs/react-api.html
-
 
 createElement = (type, args...) ->
     # Note that isPlainObject(args[0]) (from the 'is-plain-object' npm module)
@@ -91,3 +85,6 @@ module.exports.createFactory = createFactory
 module.exports.create_factory = createFactory
 module.exports.Component = Component
 module.exports.C = Component
+module.exports.cloneElement = React.cloneElement
+module.exports.isValidElement = React.isValidElement
+module.exports.Children = React.Children
