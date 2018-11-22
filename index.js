@@ -12,7 +12,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
   // Copyright (C) 2017-present Dario Giovannetti <dev@dariogiovannetti.net>
   // Licensed under MIT
   // https://github.com/kynikos/react-helpers/blob/master/LICENSE
-  var Component, HTML_TAG_NAMES, React, createElement, createFactory, createFragment, i, len, tagName;
+  var Component, HTML_TAG_NAMES, PureComponent, React, createElement, createFactory, createFragment, i, len, tagName;
 
   React = require('react');
 
@@ -35,6 +35,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
     return (_React2 = React).createElement.apply(_React2, [type].concat(args));
   };
 
+  // TODO: Deprecate createFragment in a future version, just use React.Fragment
   createFragment = function createFragment() {
     for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
       args[_key2] = arguments[_key2];
@@ -85,45 +86,44 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
     return Component;
   }(React.Component);
 
+  PureComponent = function (_React$PureComponent) {
+    _inherits(PureComponent, _React$PureComponent);
+
+    function PureComponent(props) {
+      _classCallCheck(this, PureComponent);
+
+      var _this2 = _possibleConstructorReturn(this, (PureComponent.__proto__ || Object.getPrototypeOf(PureComponent)).call(this, props));
+
+      if (_this2.init != null) {
+        _this2.init(props);
+      }
+      return _this2;
+    }
+
+    return PureComponent;
+  }(React.PureComponent);
+
   module.exports.createElement = createElement;
-
-  module.exports.create_element = createElement;
-
-  module.exports.e = createElement;
-
-  module.exports.E = createElement;
 
   module.exports.h = createElement;
 
-  module.exports.H = createElement;
-
-  module.exports.r = createElement;
-
-  module.exports.R = createElement;
-
-  module.exports.createFragment = createFragment;
-
-  module.exports.create_fragment = createFragment;
-
+  // TODO: Deprecate createFragment in a future version, just export
+  // React.Fragment here
   module.exports.Fragment = createFragment;
-
-  module.exports.fragment = createFragment;
-
-  module.exports.f = createFragment;
-
-  module.exports.F = createFragment;
 
   module.exports.createFactory = createFactory;
 
-  module.exports.create_factory = createFactory;
-
   module.exports.Component = Component;
 
-  module.exports.C = Component;
+  module.exports.PureComponent = PureComponent;
 
   module.exports.cloneElement = React.cloneElement;
 
   module.exports.isValidElement = React.isValidElement;
 
   module.exports.Children = React.Children;
+
+  module.exports.createRef = React.createRef;
+
+  module.exports.forwardRef = React.forwardRef;
 }).call(undefined);
