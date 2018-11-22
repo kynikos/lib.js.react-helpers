@@ -17,6 +17,7 @@ createElement = (type, args...) ->
     return React.createElement(type, args...)
 
 
+# TODO: Deprecate createFragment in a future version, just use React.Fragment
 createFragment = (args...) ->
     return createElement(React.Fragment, args...)
 
@@ -68,23 +69,12 @@ class Component extends React.Component
 
 
 module.exports.createElement = createElement
-module.exports.create_element = createElement
-module.exports.e = createElement
-module.exports.E = createElement
 module.exports.h = createElement
-module.exports.H = createElement
-module.exports.r = createElement
-module.exports.R = createElement
-module.exports.createFragment = createFragment
-module.exports.create_fragment = createFragment
+# TODO: Deprecate createFragment in a future version, just export
+# React.Fragment here
 module.exports.Fragment = createFragment
-module.exports.fragment = createFragment
-module.exports.f = createFragment
-module.exports.F = createFragment
 module.exports.createFactory = createFactory
-module.exports.create_factory = createFactory
 module.exports.Component = Component
-module.exports.C = Component
 module.exports.cloneElement = React.cloneElement
 module.exports.isValidElement = React.isValidElement
 module.exports.Children = React.Children
