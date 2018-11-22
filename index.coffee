@@ -68,6 +68,13 @@ class Component extends React.Component
             @init(props)
 
 
+class PureComponent extends React.PureComponent
+    constructor: (props) ->
+        super(props)
+        if @init?
+            @init(props)
+
+
 module.exports.createElement = createElement
 module.exports.h = createElement
 # TODO: Deprecate createFragment in a future version, just export
@@ -75,6 +82,9 @@ module.exports.h = createElement
 module.exports.Fragment = createFragment
 module.exports.createFactory = createFactory
 module.exports.Component = Component
+module.exports.PureComponent = PureComponent
 module.exports.cloneElement = React.cloneElement
 module.exports.isValidElement = React.isValidElement
 module.exports.Children = React.Children
+module.exports.createRef = React.createRef
+module.exports.forwardRef = React.forwardRef
