@@ -12,7 +12,7 @@
     "react"
   ],
   "scripts": {
-    "compile": "coffee --compile --transpile index.coffee"
+    "compile": "./node_modules/.bin/coffee --compile --transpile index.coffee"
   },
   "dependencies": {
     "react": "^16.2.0"
