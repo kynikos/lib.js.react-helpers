@@ -1,6 +1,6 @@
 {
   "name": "@kynikos/react-helpers",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "author": "Dario Giovannetti",
   "description": "React helpers.",
   "license": "MIT",
@@ -11,21 +11,10 @@
   "keywords": [
     "react"
   ],
-  "scripts": {
-    "compile": "./node_modules/.bin/coffee --compile --transpile index.coffee"
-  },
   "dependencies": {
-    "react": "^16.6.3"
+    "react": "^16.13.1"
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.7.0",
-    "coffeelint": "^2.1.0",
-    "coffeescript": "^2.3.2"
-  },
-  "babel": {
-    "presets": [
-      "env"
-    ]
+    "eslint": "^6.8.0"
   }
 }
