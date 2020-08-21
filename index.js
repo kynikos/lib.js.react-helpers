@@ -4,7 +4,7 @@
 // https://github.com/kynikos/react-helpers/blob/master/LICENSE
 
 import {
-  createElement as h,
+  createElement as originalCreateElement,
   isValidElement,
 } from 'react'
 
@@ -21,7 +21,7 @@ export {
 } from 'react'
 
 
-export default function createElement(type, ...args) {
+export function createElement(type, ...args) {
   // Note that isPlainObject(args[0]) (from the 'is-plain-object' npm module)
   // returns true also for React elements!
   if (
@@ -29,12 +29,13 @@ export default function createElement(type, ...args) {
     isValidElement(args[0]) ||
     Array.isArray(args[0])
   ) {
-    return h(type, null, ...args)
+    return originalCreateElement(type, null, ...args)
   }
   // I guess args[0] is a plain object then, let React.createElement possibly
   // complain about it
-  return h(type, ...args)
+  return originalCreateElement(type, ...args)
 }
+export {createElement as default}
 export {createElement as h}
 
 
