@@ -3,12 +3,10 @@
 // Licensed under MIT
 // https://github.com/kynikos/react-helpers/blob/master/LICENSE
 
-import {
-  createElement as originalCreateElement,
-  isValidElement,
-} from 'react'
-
-export {
+// Use commonJS requires instead of ES6 imports so this module can be used also
+// on a Node server
+const {
+  createElement,
   Fragment,
   Component,
   PureComponent,
@@ -18,10 +16,23 @@ export {
   Children,
   createRef,
   forwardRef,
-} from 'react'
+} = require('react')
+
+module.exports = {
+  createElement,
+  Fragment,
+  Component,
+  PureComponent,
+  memo,
+  cloneElement,
+  isValidElement,
+  Children,
+  createRef,
+  forwardRef,
+}
 
 
-export function createElement(type, ...args) {
+function createElementExt(type, ...args) {
   // Note that isPlainObject(args[0]) (from the 'is-plain-object' npm module)
   // returns true also for React elements!
   if (
@@ -29,18 +40,18 @@ export function createElement(type, ...args) {
     isValidElement(args[0]) ||
     Array.isArray(args[0])
   ) {
-    return originalCreateElement(type, null, ...args)
+    return createElement(type, null, ...args)
   }
   // I guess args[0] is a plain object then, let React.createElement possibly
   // complain about it
-  return originalCreateElement(type, ...args)
+  return createElement(type, ...args)
 }
-export {createElement as default}
-export {createElement as h}
+module.exports.createElementExt = createElementExt
 
 
 // Note that React.createFactory() is "considered legacy" by upstream
 // https://reactjs.org/docs/react-api.html#createfactory
-export function createFactory(type) {
-  return (...args) => createElement(type, ...args)
+function createFactoryExt(type) {
+  return (...args) => createElementExt(type, ...args)
 }
+module.exports.createFactoryExt = createFactoryExt
