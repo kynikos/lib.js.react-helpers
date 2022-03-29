@@ -36,8 +36,12 @@ function createElementExt(type, ...args) {
   // Note that isPlainObject(args[0]) (from the 'is-plain-object' npm module)
   // returns true also for React elements!
   if (
-    typeof args[0] === 'string' ||
     isValidElement(args[0]) ||
+    // https://reactjs.org/docs/jsx-in-depth.html#booleans-null-and-undefined-are-ignored
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof#description
+    typeof args[0] !== 'object' ||
+    // typeof null == 'object', so also check if args[0] == null
+    args[0] == null ||
     Array.isArray(args[0])
   ) {
     return createElement(type, null, ...args)
