@@ -12,9 +12,9 @@
     "react"
   ],
   "dependencies": {
-    "react": "^17.0.1"
+    "react": "^18.0.0"
   },
   "devDependencies": {
-    "eslint": "^7.15.0"
+    "eslint": "^8.13.0"
   }
 }
