@@ -7,29 +7,8 @@
 // on a Node server
 const {
   createElement,
-  Fragment,
-  Component,
-  PureComponent,
-  memo,
-  cloneElement,
   isValidElement,
-  Children,
-  createRef,
-  forwardRef,
 } = require('react')
-
-module.exports = {
-  createElement,
-  Fragment,
-  Component,
-  PureComponent,
-  memo,
-  cloneElement,
-  isValidElement,
-  Children,
-  createRef,
-  forwardRef,
-}
 
 
 function createElementExt(type, ...args) {
